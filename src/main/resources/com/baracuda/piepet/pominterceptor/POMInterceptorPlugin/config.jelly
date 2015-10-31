@@ -14,7 +14,7 @@
       <f:textbox value="pom.xml"/>
     </f:entry>
 
-    <f:entry title="Intercept POM elements" field="pomElements" description="Specify POM elements comma separated to intercept. E.g version,groupId,artifactId.">
-      <f:textbox />
+    <f:entry title="Intercept POM elements" field="xPath" description="Specify POM elements to be intercepted as XPATH. E.g /project/*[name()='artifactId' or name()='groupId' or name()='version'].">
+      <f:textbox value="/project/*[name()='artifactId' or name()='groupId' or name()='version']"/>
     </f:entry>
 </j:jelly>

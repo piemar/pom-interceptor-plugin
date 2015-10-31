@@ -32,7 +32,7 @@ import org.kohsuke.stapler.export.Exported;
 import org.kohsuke.stapler.export.ExportedBean;
 
 @ExportedBean(defaultVisibility=2)
-public class POMInterceptorAction implements BuildBadgeAction {
+public class POMInterceptorBadge implements BuildBadgeAction {
     private final String iconPath;
     private final String text;
     private String color = "#000000";
@@ -41,27 +41,27 @@ public class POMInterceptorAction implements BuildBadgeAction {
     private String borderColor = "#C0C000";
     private String link;
 
-    private POMInterceptorAction(String iconPath, String text) {
+    private POMInterceptorBadge(String iconPath, String text) {
         this.iconPath = iconPath;
         this.text = text;
     }
 
-    public static POMInterceptorAction createBadge(String icon, String text) {
-        return new POMInterceptorAction(getIconPath(icon), text);
+    public static POMInterceptorBadge createBadge(String icon, String text) {
+        return new POMInterceptorBadge(getIconPath(icon), text);
     }
 
-    public static POMInterceptorAction createBadge(String icon, String text, String link) {
-        POMInterceptorAction action =  new POMInterceptorAction(getIconPath(icon), text);
+    public static POMInterceptorBadge createBadge(String icon, String text, String link) {
+        POMInterceptorBadge action =  new POMInterceptorBadge(getIconPath(icon), text);
         action.link = link;
         return action;
     }
 
-    public static POMInterceptorAction createShortText(String text) {
-        return new POMInterceptorAction(null, text);
+    public static POMInterceptorBadge createShortText(String text) {
+        return new POMInterceptorBadge(null, text);
     }
 
-    public static POMInterceptorAction createShortText(String text, String color, String background, String border, String borderColor) {
-        POMInterceptorAction action =  new POMInterceptorAction(null, text);
+    public static POMInterceptorBadge createShortText(String text, String color, String background, String border, String borderColor) {
+        POMInterceptorBadge action =  new POMInterceptorBadge(null, text);
         action.color = color;
         action.background = background;
         action.border = border;
@@ -69,16 +69,16 @@ public class POMInterceptorAction implements BuildBadgeAction {
         return action;
     }
 
-    public static POMInterceptorAction createInfoBadge(String text) {
-        return new POMInterceptorAction(getIconPath("info.gif"), text);
+    public static POMInterceptorBadge createInfoBadge(String text) {
+        return new POMInterceptorBadge(getIconPath("info.gif"), text);
     }
 
-    public static POMInterceptorAction createWarningBadge(String text) {
-        return new POMInterceptorAction(getIconPath("warning.gif"), text);
+    public static POMInterceptorBadge createWarningBadge(String text) {
+        return new POMInterceptorBadge(getIconPath("warning.gif"), text);
     }
 
-    public static POMInterceptorAction createErrorBadge(String text) {
-        return new POMInterceptorAction(getIconPath("error.gif"), text);
+    public static POMInterceptorBadge createErrorBadge(String text) {
+        return new POMInterceptorBadge(getIconPath("error.gif"), text);
     }
 
     /* Action methods */

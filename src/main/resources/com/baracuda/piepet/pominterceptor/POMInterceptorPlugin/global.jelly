@@ -13,8 +13,8 @@
     so it should be straightforward to find them.
   -->
   <f:section title="Maven POM Interceptor">
-    <f:entry title="Add parameters to job" field="addParamatersToJob"
-      description="If checked POM elements will be added as parameters to job (default artifactId,version,groupId)">
+    <f:entry title="Add version" field="addBadge"
+      description="If checked will add badge with artifactVersion to build history">
       <f:checkbox />
     </f:entry>
   </f:section>
